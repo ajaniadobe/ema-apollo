@@ -1,0 +1,37 @@
+{
+  "definitions": [
+    {
+      "title": "Breadcrumb",
+      "id": "breadcrumb",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block",
+            "template": {
+              "name": "Breadcrumb",
+              "model": "breadcrumb"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "breadcrumb",
+      "fields": [
+        {
+          "component": "aem-content",
+          "name": "link",
+          "label": "Link"
+        },
+        {
+          "component": "text",
+          "name": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}
