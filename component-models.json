@@ -237,8 +237,13 @@
     "fields": [
       {
         "component": "aem-content",
-        "name": "reference",
-        "label": "Form Reference"
+        "valueType": "string",
+        "name": "formPath",
+        "value": "",
+        "label": "Form Path",
+        "validation": {
+          "rootPath": "/content/forms/af"
+        }
       }
     ]
   },
