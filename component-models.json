@@ -327,18 +327,15 @@
     "fields": [
       {
         "component": "reference",
+        "valueType": "string",
         "name": "image",
         "label": "Image",
         "multi": false
       },
       {
-        "component": "text",
-        "name": "imageAlt",
-        "label": "Image Alt Text"
-      },
-      {
         "component": "richtext",
         "name": "text",
+        "value": "",
         "label": "Text",
         "valueType": "string"
       }
