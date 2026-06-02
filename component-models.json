@@ -233,6 +233,16 @@
     ]
   },
   {
+    "id": "embed-adaptive-form",
+    "fields": [
+      {
+        "component": "aem-content",
+        "name": "reference",
+        "label": "Form Reference"
+      }
+    ]
+  },
+  {
     "id": "form",
     "fields": [
       {
