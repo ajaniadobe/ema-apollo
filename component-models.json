@@ -158,6 +158,21 @@
     ]
   },
   {
+    "id": "breadcrumb",
+    "fields": [
+      {
+        "component": "aem-content",
+        "name": "link",
+        "label": "Link"
+      },
+      {
+        "component": "text",
+        "name": "text",
+        "label": "Text"
+      }
+    ]
+  },
+  {
     "id": "card",
     "fields": [
       {
@@ -326,11 +341,6 @@
         "name": "text",
         "label": "Text",
         "valueType": "string"
-      },
-      {
-        "component": "aem-content",
-        "name": "link",
-        "label": "Link"
       }
     ]
   },

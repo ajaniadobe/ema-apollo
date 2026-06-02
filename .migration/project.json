@@ -1,6 +1,11 @@
 {
+  "type": "xwalk",
+  "contentHostUrl": "author-p142404-e1461341.adobeaemcloud.com",
   "previewOrg": "ajaniadobe",
   "previewSite": "ema-apollo",
-  "type": "xwalk",
-  "contentHostUrl": "author-p142404-e1461341.adobeaemcloud.com"
+  "aemSitePath": "/content/ema-apollo",
+  "aemAssetsFolderPath": "/content/dam/ema-apollo",
+  "aemSiteName": "ema-apollo",
+  "aemSiteTitle": "EMA Apollo",
+  "baseUrl": "http://www.apollo.com"
 }
