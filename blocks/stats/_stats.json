@@ -1,0 +1,38 @@
+{
+  "definitions": [
+    {
+      "title": "Stats",
+      "id": "stats",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block",
+            "template": {
+              "name": "Stats",
+              "model": "stats"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "stats",
+      "fields": [
+        {
+          "component": "text",
+          "name": "value",
+          "label": "Stat Value"
+        },
+        {
+          "component": "richtext",
+          "name": "description",
+          "label": "Description",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

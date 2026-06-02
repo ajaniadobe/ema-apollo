@@ -142,6 +142,22 @@
     ]
   },
   {
+    "id": "accordion",
+    "fields": [
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "name": "content",
+        "label": "Content",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
     "id": "card",
     "fields": [
       {
@@ -155,6 +171,28 @@
         "component": "richtext",
         "name": "text",
         "value": "",
+        "label": "Text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "carousel",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "imageAlt",
+        "label": "Image Alt Text"
+      },
+      {
+        "component": "richtext",
+        "name": "text",
         "label": "Text",
         "valueType": "string"
       }
@@ -212,6 +250,108 @@
         "value": "",
         "label": "Text",
         "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "quote",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "text",
+        "label": "Quote Text",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "citation",
+        "label": "Citation"
+      },
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Author Image",
+        "multi": false
+      }
+    ]
+  },
+  {
+    "id": "stats",
+    "fields": [
+      {
+        "component": "text",
+        "name": "value",
+        "label": "Stat Value"
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "label": "Description",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "tabs",
+    "fields": [
+      {
+        "component": "text",
+        "name": "tabLabel",
+        "label": "Tab Label"
+      },
+      {
+        "component": "richtext",
+        "name": "tabContent",
+        "label": "Tab Content",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "teaser",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "imageAlt",
+        "label": "Image Alt Text"
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "label": "Text",
+        "valueType": "string"
+      },
+      {
+        "component": "aem-content",
+        "name": "link",
+        "label": "Link"
+      }
+    ]
+  },
+  {
+    "id": "video",
+    "fields": [
+      {
+        "component": "text",
+        "name": "videoUrl",
+        "label": "Video URL"
+      },
+      {
+        "component": "reference",
+        "name": "poster",
+        "label": "Poster Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "posterAlt",
+        "label": "Poster Alt Text"
       }
     ]
   }
