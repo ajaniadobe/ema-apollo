@@ -158,21 +158,6 @@
     ]
   },
   {
-    "id": "breadcrumb",
-    "fields": [
-      {
-        "component": "aem-content",
-        "name": "link",
-        "label": "Link"
-      },
-      {
-        "component": "text",
-        "name": "text",
-        "label": "Text"
-      }
-    ]
-  },
-  {
     "id": "card",
     "fields": [
       {
