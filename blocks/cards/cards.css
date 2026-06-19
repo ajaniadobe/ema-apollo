@@ -52,7 +52,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  color: var(--green-color);
+  color: var(--text-color-muted);
   display: block;
   margin-bottom: var(--spacing-xxs);
 }
