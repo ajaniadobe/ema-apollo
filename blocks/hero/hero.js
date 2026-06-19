@@ -154,8 +154,8 @@ export default function decorate(block) {
         const words = heading.textContent.trim().split(/\s+/);
         if (words.length >= 3 && words[0].toLowerCase() === 'think') {
           const topic = words.slice(1, -1).join(' ');
-          const last = words[words.length - 1];
-          heading.innerHTML = `<span class="hero-heading-think">Think</span> <span class="hero-heading-topic">${topic}</span> <span class="hero-heading-new">${last}</span>`;
+          const last = words[words.length - 1].toUpperCase();
+          heading.innerHTML = `<span class="hero-heading-think">THINK</span> <span class="hero-heading-topic">${topic}</span> <span class="hero-heading-new">${last}</span>`;
         }
       }
     }
