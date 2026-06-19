@@ -189,10 +189,6 @@
   border-bottom-color: var(--background-color-white);
 }
 
-.hero.carousel .hero-carousel-tabs button:hover {
-  color: var(--background-color-white);
-}
-
 /* Prev/next nav */
 .hero.carousel .hero-carousel-nav {
   display: flex;
@@ -219,6 +215,10 @@
 .hero.carousel .hero-carousel-nav button:hover {
   background: rgb(255 255 255 / 15%);
   border-color: var(--background-color-white);
+}
+
+.hero.carousel .hero-carousel-tabs button:hover {
+  color: var(--background-color-white);
 }
 
 @media (width >= 900px) {
