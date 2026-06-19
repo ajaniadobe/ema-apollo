@@ -1,0 +1,116 @@
+/* Teaser (Background): image absolutely positioned as decorative element,
+   content centered over it. */
+.teaser-bg > div {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--spacing-xl) 0;
+}
+
+.teaser-bg .teaser-image {
+  display: none;
+}
+
+.teaser-bg .teaser-content {
+  text-align: center;
+  max-width: 600px;
+  position: relative;
+  z-index: 1;
+}
+
+.teaser-bg .teaser-content .teaser-eyebrow {
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent-color);
+  margin: 0 0 var(--spacing-xs);
+}
+
+.teaser-bg .teaser-content h2,
+.teaser-bg .teaser-content h3 {
+  font-size: var(--heading-font-size-l);
+  margin: 0 0 var(--spacing-xs);
+  line-height: 1.15;
+  color: var(--text-color);
+}
+
+.teaser-bg .teaser-content p {
+  color: var(--text-color-muted);
+  line-height: 1.6;
+  margin: 0 0 var(--spacing-xs);
+}
+
+.teaser-bg .teaser-content p:last-child {
+  margin-bottom: 0;
+}
+
+.teaser-bg .teaser-content .teaser-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  margin-top: var(--spacing-s);
+}
+
+.teaser-bg .teaser-content .teaser-ctas a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 24px;
+  border-radius: 100px;
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-s);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid var(--text-color);
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.teaser-bg .teaser-content .teaser-ctas a:not(:first-child) {
+  background-color: transparent;
+  color: var(--text-color);
+}
+
+.teaser-bg .teaser-content .teaser-ctas a:first-child {
+  background-color: var(--text-color);
+  color: var(--background-color-white);
+}
+
+.teaser-bg .teaser-content .teaser-ctas a:not(:first-child):hover {
+  background-color: var(--light-color);
+}
+
+.teaser-bg .teaser-content .teaser-ctas a:first-child:hover {
+  background-color: var(--dark-color);
+  border-color: var(--dark-color);
+}
+
+@media (width >= 900px) {
+  .teaser-bg .teaser-image {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .teaser-bg .teaser-image picture,
+  .teaser-bg .teaser-image img {
+    height: 100%;
+    width: auto;
+    display: block;
+    object-fit: cover;
+  }
+
+  .teaser-bg .teaser-content h2,
+  .teaser-bg .teaser-content h3 {
+    font-size: var(--heading-font-size-xl);
+  }
+}
