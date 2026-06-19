@@ -1,0 +1,36 @@
+.scrolling-narrative > div {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-m);
+}
+
+.scrolling-narrative .scrolling-narrative-left h2,
+.scrolling-narrative .scrolling-narrative-left h3 {
+  font-size: var(--heading-font-size-l);
+  line-height: 1.2;
+  margin: 0 0 var(--spacing-s);
+}
+
+.scrolling-narrative .scrolling-narrative-right p {
+  font-size: var(--body-font-size-m);
+  line-height: 1.7;
+  margin: 0 0 var(--spacing-s);
+  opacity: 0.85;
+}
+
+.scrolling-narrative .scrolling-narrative-right p:last-child {
+  margin-bottom: 0;
+}
+
+@media (width >= 900px) {
+  .scrolling-narrative > div {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    align-items: start;
+  }
+
+  .scrolling-narrative .scrolling-narrative-left {
+    position: sticky;
+    top: var(--spacing-m);
+  }
+}
