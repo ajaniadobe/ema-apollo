@@ -215,6 +215,14 @@
           {
             "name": "Image Background",
             "value": "image-bg"
+          },
+          {
+            "name": "Full Width Image Left",
+            "value": "full-width-image-left"
+          },
+          {
+            "name": "Full Width Image Right",
+            "value": "full-width-image-right"
           }
         ]
       }

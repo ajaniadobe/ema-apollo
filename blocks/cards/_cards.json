@@ -94,7 +94,9 @@
             { "name": "None", "value": "" },
             { "name": "Blue", "value": "blue" },
             { "name": "Green", "value": "green" },
-            { "name": "Image Background", "value": "image-bg" }
+            { "name": "Image Background", "value": "image-bg" },
+            { "name": "Full Width Image Left", "value": "full-width-image-left" },
+            { "name": "Full Width Image Right", "value": "full-width-image-right" }
           ]
         }
       ]
