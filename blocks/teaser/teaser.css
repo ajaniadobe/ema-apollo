@@ -13,7 +13,15 @@
 .teaser .teaser-image img {
   width: 100%;
   height: auto;
+  max-height: 480px;
+  object-fit: cover;
   display: block;
+}
+
+@media (width >= 900px) {
+  .teaser .teaser-image img {
+    max-height: none;
+  }
 }
 
 .teaser .teaser-content .teaser-eyebrow {
@@ -44,24 +52,45 @@
   margin-bottom: 0;
 }
 
-.teaser .teaser-content p a {
-  font-size: var(--body-font-size-s);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: var(--text-color);
-  text-decoration: none;
+.teaser .teaser-content .teaser-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+  margin-top: var(--spacing-s);
+}
+
+.teaser .teaser-content .teaser-ctas a {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  padding: 12px 24px;
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-s);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid var(--text-color);
+  transition: background-color 0.2s, color 0.2s;
 }
 
-.teaser .teaser-content p a::after {
-  content: '\2192';
+.teaser .teaser-content .teaser-ctas a:not(:first-child) {
+  background-color: transparent;
+  color: var(--text-color);
 }
 
-.teaser .teaser-content p a:hover {
-  color: var(--text-color-muted);
+.teaser .teaser-content .teaser-ctas a:first-child {
+  background-color: var(--text-color);
+  color: var(--background-color-white);
+}
+
+.teaser .teaser-content .teaser-ctas a:not(:first-child):hover {
+  background-color: var(--light-color);
+}
+
+.teaser .teaser-content .teaser-ctas a:first-child:hover {
+  background-color: var(--dark-color);
+  border-color: var(--dark-color);
 }
 
 @media (width >= 900px) {

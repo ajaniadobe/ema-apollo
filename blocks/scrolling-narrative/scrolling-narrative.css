@@ -11,8 +11,28 @@
   margin: 0 0 var(--spacing-s);
 }
 
+.scrolling-narrative .scrolling-narrative-left a {
+  display: inline-block;
+  border: 1px solid var(--background-color-white);
+  padding: 10px 20px;
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-s);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--background-color-white);
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
+  margin-top: var(--spacing-s);
+}
+
+.scrolling-narrative .scrolling-narrative-left a:hover {
+  background-color: var(--background-color-white);
+  color: var(--green-color);
+}
+
 .scrolling-narrative .scrolling-narrative-right p {
-  font-size: var(--body-font-size-m);
+  font-size: 18px;
   line-height: 1.7;
   margin: 0 0 var(--spacing-s);
   opacity: 0.85;
