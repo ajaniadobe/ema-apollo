@@ -16,6 +16,7 @@
   --background-color-white: #fff;
   --light-color: #f5f0eb;
   --highlight-color: #f0e6d3;
+  --green-color: #1a4130;
   --dark-color: #55585a;
   --text-color: #010101;
   --text-color-muted: #55585a;
@@ -369,6 +370,26 @@ main .section.dark h3,
 main .section.dark h4,
 main .section.dark h5,
 main .section.dark h6 {
+  color: var(--background-color-white);
+}
+
+main .section.green {
+  background-color: var(--green-color);
+  color: var(--background-color-white);
+  margin: 0;
+  padding: var(--spacing-xl) 0;
+}
+
+main .section.green h1,
+main .section.green h2,
+main .section.green h3,
+main .section.green h4,
+main .section.green h5,
+main .section.green h6 {
+  color: var(--background-color-white);
+}
+
+main .section.green a {
   color: var(--background-color-white);
 }
 

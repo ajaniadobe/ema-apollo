@@ -5049,6 +5049,25 @@
     ]
   },
   {
+    "id": "scrolling-narrative",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "left",
+        "value": "",
+        "label": "Left (Heading + CTA)",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "right",
+        "value": "",
+        "label": "Right (Body Text)",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
     "id": "stats",
     "fields": [
       {
