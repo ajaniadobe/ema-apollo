@@ -163,6 +163,25 @@
   color: #fff;
 }
 
+.cards > ul > li.image-bg .cards-card-body p,
+.cards > ul > li.image-bg .cards-card-body h3,
+.cards > ul > li.image-bg .cards-card-body h4,
+.cards > ul > li.image-bg .cards-card-body h5 {
+  color: #fff;
+  margin: 0 0 var(--spacing-xxs);
+}
+
+.cards > ul > li.image-bg .cards-card-body p:last-child {
+  margin-top: auto;
+}
+
+.cards > ul > li.blue .cards-card-body > p:first-child strong,
+.cards > ul > li.blue .cards-card-body > p:first-child:not(:has(a)),
+.cards > ul > li.green .cards-card-body > p:first-child strong,
+.cards > ul > li.green .cards-card-body > p:first-child:not(:has(a)) {
+  color: var(--blue-color);
+}
+
 .cards > ul > li.blue .cards-card-body p:last-child a,
 .cards > ul > li.green .cards-card-body p:last-child a {
   color: #fff;
@@ -207,25 +226,13 @@
   padding: var(--spacing-xs);
 }
 
-.cards > ul > li.image-bg .cards-card-body p,
-.cards > ul > li.image-bg .cards-card-body h3,
-.cards > ul > li.image-bg .cards-card-body h4,
-.cards > ul > li.image-bg .cards-card-body h5 {
-  color: #fff;
-  margin: 0 0 var(--spacing-xxs);
-}
-
-.cards > ul > li.image-bg .cards-card-body p:last-child {
-  margin-top: auto;
-}
-
 .cards > ul > li.image-bg .cards-card-body > p:first-child strong,
 .cards > ul > li.image-bg .cards-card-body > p:first-child:not(:has(a)) {
   font-size: var(--body-font-size-xs);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  color: #fff;
+  color: var(--blue-color);
 }
 
 .cards > ul > li.image-bg .cards-card-body p:last-child a {
