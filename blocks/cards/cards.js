@@ -47,11 +47,21 @@ export default function decorate(block) {
     cardRows = rows.filter((_, i) => i !== headerIdx);
   }
 
+  const CARD_STYLES = new Set(['blue', 'green']);
   const ul = document.createElement('ul');
   cardRows.forEach((row) => {
     const li = document.createElement('li');
     moveInstrumentation(row, li);
     while (row.firstElementChild) li.append(row.firstElementChild);
+
+    /* extract style field (last cell whose entire text is a colour name) */
+    const last = li.lastElementChild;
+    const styleVal = last && last.textContent.trim().toLowerCase();
+    if (CARD_STYLES.has(styleVal)) {
+      li.classList.add(styleVal);
+      last.remove();
+    }
+
     [...li.children].forEach((div) => {
       if (div.children.length === 1 && div.querySelector('picture')) div.className = 'cards-card-image';
       else div.className = 'cards-card-body';

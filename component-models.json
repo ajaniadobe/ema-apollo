@@ -192,6 +192,27 @@
         "value": "",
         "label": "Text",
         "valueType": "string"
+      },
+      {
+        "component": "select",
+        "name": "style",
+        "label": "Background Style",
+        "valueType": "string",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Blue",
+            "value": "blue"
+          },
+          {
+            "name": "Green",
+            "value": "green"
+          }
+        ]
       }
     ]
   },
