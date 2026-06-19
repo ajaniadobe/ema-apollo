@@ -52,7 +52,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  color: var(--green-color);
+  color: var(--text-color-muted);
   display: block;
   margin-bottom: var(--spacing-xxs);
 }
@@ -114,6 +114,11 @@
   justify-content: space-between;
 }
 
+.cards .cards-section-header:not(:has(.cards-section-title)) {
+  justify-content: flex-end;
+  margin-top: var(--spacing-m);
+}
+
 .cards .cards-section-header .cards-section-title h2,
 .cards .cards-section-header .cards-section-title h3 {
   margin: 0;
@@ -139,6 +144,134 @@
 
 .cards .cards-section-header .cards-section-link:hover {
   color: var(--text-color-muted);
+}
+
+/* Colored card body backgrounds */
+.cards > ul > li.blue .cards-card-body {
+  background-color: var(--blue-color);
+  padding: var(--spacing-xs);
+}
+
+.cards > ul > li.green .cards-card-body {
+  background-color: var(--card-green-color);
+  padding: var(--spacing-xs);
+}
+
+.cards > ul > li.blue .cards-card-body p,
+.cards > ul > li.blue .cards-card-body h3,
+.cards > ul > li.blue .cards-card-body h4,
+.cards > ul > li.blue .cards-card-body h5,
+.cards > ul > li.green .cards-card-body p,
+.cards > ul > li.green .cards-card-body h3,
+.cards > ul > li.green .cards-card-body h4,
+.cards > ul > li.green .cards-card-body h5 {
+  color: #fff;
+}
+
+.cards > ul > li.image-bg .cards-card-body p,
+.cards > ul > li.image-bg .cards-card-body h3,
+.cards > ul > li.image-bg .cards-card-body h4,
+.cards > ul > li.image-bg .cards-card-body h5 {
+  color: #fff;
+  margin: 0 0 var(--spacing-xxs);
+}
+
+.cards > ul > li.image-bg .cards-card-body p:last-child {
+  margin-top: auto;
+}
+
+.cards > ul > li.blue .cards-card-body > p:first-child strong,
+.cards > ul > li.blue .cards-card-body > p:first-child:not(:has(a)),
+.cards > ul > li.green .cards-card-body > p:first-child strong,
+.cards > ul > li.green .cards-card-body > p:first-child:not(:has(a)),
+.cards > ul > li.image-bg .cards-card-body > p:first-child strong,
+.cards > ul > li.image-bg .cards-card-body > p:first-child:not(:has(a)) {
+  color: #fff;
+}
+
+.cards > ul > li.blue .cards-card-body p:last-child a,
+.cards > ul > li.green .cards-card-body p:last-child a {
+  color: #fff;
+}
+
+/* Image background variant */
+.cards > ul > li.image-bg {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  background-color: var(--dark-color);
+}
+
+.cards > ul > li.image-bg .cards-card-image {
+  position: absolute;
+  inset: 0;
+  line-height: 0;
+}
+
+.cards > ul > li.image-bg .cards-card-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgb(0 0 0 / 55%) 0%, rgb(0 0 0 / 10%) 50%, rgb(0 0 0 / 65%) 100%);
+}
+
+.cards > ul > li.image-bg .cards-card-image img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: unset;
+  object-fit: cover;
+  object-position: center;
+}
+
+.cards > ul > li.image-bg .cards-card-body {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--spacing-xs);
+}
+
+.cards > ul > li.image-bg .cards-card-body > p:first-child strong,
+.cards > ul > li.image-bg .cards-card-body > p:first-child:not(:has(a)) {
+  font-size: var(--body-font-size-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cards > ul > li.image-bg .cards-card-body p:last-child a {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+  font-size: var(--body-font-size-s);
+  font-weight: 500;
+  text-decoration: none;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.cards > ul > li.image-bg .cards-card-body p:last-child a::before {
+  content: '\2192';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.cards > ul > li.image-bg .cards-card-body p:last-child a::after {
+  display: none;
+}
+
+.cards > ul > li.image-bg:hover .cards-card-image img {
+  transform: scale(1.03);
 }
 
 /* Featured variant: large card on left, remaining cards stacked on right */
