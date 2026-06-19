@@ -10,7 +10,7 @@ function buildSectionHeader(row) {
   const titleCell = cells[0];
   const linkCell = cells[1];
 
-  if (titleCell) {
+  if (titleCell && titleCell.hasChildNodes()) {
     const titleDiv = document.createElement('div');
     titleDiv.className = 'cards-section-title';
     while (titleCell.firstChild) titleDiv.append(titleCell.firstChild);
@@ -30,12 +30,15 @@ export default function decorate(block) {
   const rows = [...block.children];
   const fragment = document.createDocumentFragment();
 
-  /* header row is the last row whose first cell has an h2/h3 and no picture */
+  /* header row: has a heading in first cell, or first cell is empty with a link in last cell */
   const isHeaderRow = (r) => {
     const model = r.getAttribute('data-aue-model');
     if (model) return model === 'cards' || model === 'cards-header';
     const c1 = r.children[0];
-    return c1 && c1.querySelector('h2,h3') && !c1.querySelector('picture');
+    if (!c1 || c1.querySelector('picture')) return false;
+    if (c1.querySelector('h2,h3')) return true;
+    const last = r.lastElementChild;
+    return c1 !== last && !c1.textContent.trim() && !!last.querySelector('a') && !last.querySelector('picture,h2,h3,h4,h5,strong');
   };
   let headerIdx = -1;
   for (let i = rows.length - 1; i >= 0; i -= 1) {
