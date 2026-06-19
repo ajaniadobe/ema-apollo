@@ -73,12 +73,25 @@ main > .section.hero-carousel-container {
   margin: 0 0 var(--spacing-xs);
 }
 
-.hero-carousel.hero.carousel .hero-slide .hero-content h2 .bold {
-  font-weight: 700;
+.hero-carousel.hero.carousel .hero-slide .hero-content .hero-heading-think {
+  font-family: var(--body-font-family);
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
 }
 
-.hero-carousel.hero.carousel .hero-slide .hero-content h2 .italic {
+.hero-carousel.hero.carousel .hero-slide .hero-content .hero-heading-topic {
+  font-family: var(--heading-font-family);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.hero-carousel.hero.carousel .hero-slide .hero-content .hero-heading-new {
+  font-family: var(--heading-font-family);
   font-style: italic;
+  font-weight: 400;
+  line-height: 1.1;
 }
 
 .hero-carousel.hero.carousel .hero-slide .hero-content p {
@@ -165,7 +178,6 @@ main > .section.hero-carousel-container {
 @media (width >= 900px) {
   .hero-carousel.hero.carousel .hero-slide {
     min-height: 680px;
-    max-width: fit-content;
     padding: var(--spacing-xxl) var(--spacing-m) calc(var(--spacing-xl) + 64px);
   }
 

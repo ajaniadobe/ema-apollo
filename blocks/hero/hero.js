@@ -155,7 +155,7 @@ export default function decorate(block) {
         if (words.length >= 3 && words[0].toLowerCase() === 'think') {
           const topic = words.slice(1, -1).join(' ');
           const last = words[words.length - 1];
-          heading.innerHTML = `<span>Think</span> <span class="bold">${topic}</span> <span class="italic">${last}</span>`;
+          heading.innerHTML = `<span class="hero-heading-think">Think</span> <span class="hero-heading-topic">${topic}</span> <span class="hero-heading-new">${last}</span>`;
         }
       }
     }
