@@ -1,5 +1,3 @@
-import { moveInstrumentation } from '../../scripts/scripts.js';
-
 function buildCarousel(block) {
   const slides = [...block.children];
   if (slides.length <= 1) return;
@@ -128,7 +126,6 @@ export default function decorate(block) {
         cell.classList.add('hero-content');
       }
     }
-    moveInstrumentation(row, row);
   });
 
   if (isCarousel) {

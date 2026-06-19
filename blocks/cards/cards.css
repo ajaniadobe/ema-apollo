@@ -101,6 +101,46 @@
   color: var(--text-color-muted);
 }
 
+/* Section header: title left + link right, or centered when no link */
+.cards .cards-section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: var(--spacing-m);
+  margin-bottom: var(--spacing-m);
+}
+
+.cards .cards-section-header:has(.cards-section-link) {
+  justify-content: space-between;
+}
+
+.cards .cards-section-header .cards-section-title h2,
+.cards .cards-section-header .cards-section-title h3 {
+  margin: 0;
+}
+
+.cards .cards-section-header .cards-section-link {
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-s);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-color);
+  text-decoration: none;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cards .cards-section-header .cards-section-link::after {
+  content: '\2192';
+}
+
+.cards .cards-section-header .cards-section-link:hover {
+  color: var(--text-color-muted);
+}
+
 /* Featured variant: first card full-width with wider image */
 .cards.featured > ul {
   grid-template-columns: 1fr;
