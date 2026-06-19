@@ -227,12 +227,9 @@ main > .section.hero-carousel-container {
 
   .hero-carousel.hero.carousel .hero-slide .hero-content {
     margin: 0 auto;
-    padding-left: var(--spacing-s);
-    padding-right: var(--spacing-s);
+    padding: 160px var(--spacing-s) calc(var(--spacing-xl) + 64px);
     display: flex;
     flex-direction: column;
-    padding-top: 160px;
-    padding-bottom: calc(var(--spacing-xl) + 64px);
     width: 100%;
   }
 
@@ -262,8 +259,7 @@ main > .section.hero-carousel-container {
 
 @media (width >= 900px) {
   .hero-carousel.hero.carousel .hero-slide .hero-content {
-    padding-left: var(--spacing-m);
-    padding-right: var(--spacing-m);
+    padding: 160px var(--spacing-m) calc(var(--spacing-xl) + 64px);
   }
 
   .hero-carousel.hero.carousel .hero-carousel-controls {
