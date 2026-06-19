@@ -1,3 +1,7 @@
+main > .section:has(.news-list) {
+  border-top: 1px solid var(--border-color);
+}
+
 .news-list .news-list-items {
   list-style: none;
   padding: 0;
