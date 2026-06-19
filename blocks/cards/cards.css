@@ -100,6 +100,33 @@
   color: var(--text-color-muted);
 }
 
+/* No-image cards: circle-arrow CTA style */
+.cards > ul > li:not(:has(.cards-card-image)) .cards-card-body p:last-child a {
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 500;
+  gap: 12px;
+}
+
+.cards > ul > li:not(:has(.cards-card-image)) .cards-card-body p:last-child a::after {
+  content: none;
+}
+
+.cards > ul > li:not(:has(.cards-card-image)) .cards-card-body p:last-child a::before {
+  content: '\2192';
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  border: 1px solid var(--text-color);
+  border-radius: 50%;
+  font-size: 14px;
+  flex-shrink: 0;
+  order: -1;
+}
+
 /* Section header: title left + link right, or centered when no link */
 .cards .cards-section-header {
   display: flex;
