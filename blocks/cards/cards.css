@@ -114,6 +114,11 @@
   justify-content: space-between;
 }
 
+.cards .cards-section-header:not(:has(.cards-section-title)) {
+  justify-content: flex-end;
+  margin-top: var(--spacing-m);
+}
+
 .cards .cards-section-header .cards-section-title h2,
 .cards .cards-section-header .cards-section-title h3 {
   margin: 0;
@@ -148,7 +153,7 @@
 }
 
 .cards > ul > li.green .cards-card-body {
-  background-color: var(--green-color);
+  background-color: var(--card-green-color);
   padding: var(--spacing-xs);
 }
 
