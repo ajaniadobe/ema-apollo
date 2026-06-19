@@ -121,7 +121,20 @@ export default function decorate(block) {
 
   [...block.children].forEach((row) => {
     const cells = [...row.children];
-    if (cells.length >= 2) {
+    if (cells.length >= 4) {
+      // New model: image | heading (text) | description (richtext) | link (richtext)
+      cells[0].classList.add('hero-image');
+      const content = document.createElement('div');
+      content.className = 'hero-content';
+      const h2 = document.createElement('h2');
+      h2.textContent = cells[1].textContent.trim();
+      content.append(h2);
+      while (cells[2].firstChild) content.append(cells[2].firstChild);
+      while (cells[3].firstChild) content.append(cells[3].firstChild);
+      cells[3].remove();
+      cells[2].remove();
+      cells[1].replaceWith(content);
+    } else if (cells.length >= 2) {
       cells[0].classList.add('hero-image');
       cells[1].classList.add('hero-content');
     } else if (cells.length === 1) {
@@ -133,7 +146,7 @@ export default function decorate(block) {
       }
     }
 
-    // Transform "Think Topic New" heading into stacked typographic treatment
+    // Transform "Think Topic New" heading into inline spans with distinct treatments
     const contentCell = row.querySelector('.hero-content');
     if (contentCell) {
       const heading = contentCell.querySelector('h1, h2, h3');
@@ -142,7 +155,7 @@ export default function decorate(block) {
         if (words.length >= 3 && words[0].toLowerCase() === 'think') {
           const topic = words.slice(1, -1).join(' ');
           const last = words[words.length - 1];
-          heading.innerHTML = `<span class="hero-heading-think">Think</span><span class="hero-heading-topic">${topic}</span><span class="hero-heading-new">${last}</span>`;
+          heading.innerHTML = `<span>Think</span> <span class="bold">${topic}</span> <span class="italic">${last}</span>`;
         }
       }
     }

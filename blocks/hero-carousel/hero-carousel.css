@@ -3,6 +3,10 @@
   padding: 0;
 }
 
+main > .section.hero-carousel-container {
+  margin-bottom: 0;
+}
+
 .hero-carousel.hero.carousel {
   padding: 0;
   min-height: unset;
@@ -25,6 +29,7 @@
 
 .hero-carousel.hero.carousel .hero-slide {
   flex: 0 0 100%;
+  max-width: fit-content;
   position: relative;
   min-height: 500px;
   display: flex;
@@ -67,35 +72,14 @@
   color: var(--background-color-white);
   font-size: var(--heading-font-size-xxl);
   margin: 0 0 var(--spacing-xs);
-  display: flex;
-  flex-direction: column;
-  line-height: 1;
 }
 
-.hero-carousel.hero.carousel .hero-slide .hero-content .hero-heading-think {
-  font-size: var(--body-font-size-m);
-  font-family: var(--body-font-family);
-  font-weight: 400;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  opacity: 0.7;
-  margin-bottom: 4px;
+.hero-carousel.hero.carousel .hero-slide .hero-content h2 .bold {
+  font-weight: 700;
 }
 
-.hero-carousel.hero.carousel .hero-slide .hero-content .hero-heading-topic {
-  font-size: var(--heading-font-size-xxl);
-  font-family: var(--heading-font-family);
-  font-weight: 400;
-  line-height: 1;
-}
-
-.hero-carousel.hero.carousel .hero-slide .hero-content .hero-heading-new {
-  font-size: var(--heading-font-size-xl);
-  font-family: var(--heading-font-family);
+.hero-carousel.hero.carousel .hero-slide .hero-content h2 .italic {
   font-style: italic;
-  font-weight: 400;
-  color: var(--accent-color);
-  line-height: 1.1;
 }
 
 .hero-carousel.hero.carousel .hero-slide .hero-content p {
