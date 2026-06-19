@@ -68,7 +68,8 @@ main > .section.hero-carousel-container {
   margin: 0 var(--spacing-xs);
   color: var(--background-color-white);
   text-align: center;
-  width: 100%;
+  flex: 1;
+  min-width: 0;
 }
 
 .hero-carousel.hero.carousel .hero-slide .hero-content h1,
@@ -225,11 +226,14 @@ main > .section.hero-carousel-container {
   }
 
   .hero-carousel.hero.carousel .hero-slide .hero-content {
-    margin: 0 var(--spacing-s);
+    margin: 0 auto;
+    padding-left: var(--spacing-s);
+    padding-right: var(--spacing-s);
     display: flex;
     flex-direction: column;
     padding-top: 160px;
     padding-bottom: calc(var(--spacing-xl) + 64px);
+    width: 100%;
   }
 
   .hero-carousel.hero.carousel .hero-slide .hero-content h1,
@@ -258,7 +262,8 @@ main > .section.hero-carousel-container {
 
 @media (width >= 900px) {
   .hero-carousel.hero.carousel .hero-slide .hero-content {
-    margin: 0 var(--spacing-m);
+    padding-left: var(--spacing-m);
+    padding-right: var(--spacing-m);
   }
 
   .hero-carousel.hero.carousel .hero-carousel-controls {
