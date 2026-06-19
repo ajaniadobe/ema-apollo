@@ -1,0 +1,61 @@
+@import url('../teaser/teaser.css');
+
+/* Reverse: image right, text left */
+.teaser-reverse > div {
+  direction: rtl;
+}
+
+.teaser-reverse > div > * {
+  direction: ltr;
+}
+
+/* Text-links CTA style — overrides inherited button styles from teaser.css */
+.teaser-reverse.text-links .teaser-content .teaser-ctas {
+  gap: var(--spacing-s);
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.teaser-reverse.text-links .teaser-content .teaser-ctas a {
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--text-color);
+  text-transform: none;
+  font-size: var(--body-font-size-s);
+  font-weight: 500;
+  letter-spacing: 0;
+  gap: 12px;
+}
+
+.teaser-reverse.text-links .teaser-content .teaser-ctas a::before {
+  content: '\2192';
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  border: 1px solid var(--text-color);
+  border-radius: 50%;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.teaser-reverse.text-links .teaser-content .teaser-ctas a:first-child,
+.teaser-reverse.text-links .teaser-content .teaser-ctas a:not(:first-child) {
+  background: transparent;
+  color: var(--text-color);
+}
+
+.teaser-reverse.text-links .teaser-content .teaser-ctas a:hover,
+.teaser-reverse.text-links .teaser-content .teaser-ctas a:first-child:hover,
+.teaser-reverse.text-links .teaser-content .teaser-ctas a:not(:first-child):hover {
+  background: transparent;
+  color: var(--text-color-muted);
+  border: none;
+}
+
+.teaser-reverse.text-links .teaser-content .teaser-ctas a:hover::before {
+  border-color: var(--text-color-muted);
+}

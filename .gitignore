@@ -13,3 +13,4 @@ import-work/
 # Ensure these files are tracked
 !CLAUDE.md
 !AGENTS.md
+.claude/visual-qa.json
