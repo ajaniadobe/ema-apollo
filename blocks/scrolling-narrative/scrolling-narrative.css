@@ -6,7 +6,7 @@
 
 .scrolling-narrative .scrolling-narrative-left h2,
 .scrolling-narrative .scrolling-narrative-left h3 {
-  font-size: var(--heading-font-size-l);
+  font-size: 32px;
   line-height: 1.2;
   margin: 0 0 var(--spacing-s);
 }
@@ -14,7 +14,8 @@
 .scrolling-narrative .scrolling-narrative-left a {
   display: inline-block;
   border: 1px solid var(--background-color-white);
-  padding: 10px 20px;
+  border-radius: 100px;
+  padding: 10px 24px;
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-s);
   font-weight: 500;
@@ -32,7 +33,8 @@
 }
 
 .scrolling-narrative .scrolling-narrative-right p {
-  font-size: 18px;
+  font-family: var(--heading-font-family);
+  font-size: 28px;
   line-height: 1.7;
   margin: 0 0 var(--spacing-s);
   opacity: 0.85;
@@ -40,6 +42,17 @@
 
 .scrolling-narrative .scrolling-narrative-right p:last-child {
   margin-bottom: 0;
+}
+
+@media (width >= 768px) {
+  .scrolling-narrative .scrolling-narrative-left h2,
+  .scrolling-narrative .scrolling-narrative-left h3 {
+    font-size: 36px;
+  }
+
+  .scrolling-narrative .scrolling-narrative-right p {
+    font-size: 32px;
+  }
 }
 
 @media (width >= 900px) {
@@ -52,5 +65,20 @@
   .scrolling-narrative .scrolling-narrative-left {
     position: sticky;
     top: var(--spacing-m);
+  }
+}
+
+@media (width >= 992px) {
+  .scrolling-narrative > div {
+    height: 480px;
+    overflow: hidden;
+  }
+
+  .scrolling-narrative .scrolling-narrative-right {
+    height: 100%;
+    overflow-y: auto;
+    padding-right: var(--spacing-xs);
+    scrollbar-width: thin;
+    scrollbar-color: rgb(255 255 255 / 30%) transparent;
   }
 }
