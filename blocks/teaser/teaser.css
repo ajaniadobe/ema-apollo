@@ -1,27 +1,21 @@
+/* Default teaser: content centered, image hidden on mobile, absolutely positioned at desktop */
 .teaser > div {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--spacing-m);
+  position: relative;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  padding: var(--spacing-xl) 0;
 }
 
 .teaser .teaser-image {
-  overflow: hidden;
+  display: none;
 }
 
-.teaser .teaser-image picture,
-.teaser .teaser-image img {
-  width: 100%;
-  height: auto;
-  max-height: 480px;
-  object-fit: cover;
-  display: block;
-}
-
-@media (width >= 900px) {
-  .teaser .teaser-image img {
-    max-height: none;
-  }
+.teaser .teaser-content {
+  text-align: center;
+  max-width: 600px;
+  position: relative;
+  z-index: 1;
 }
 
 .teaser .teaser-content .teaser-eyebrow {
@@ -55,6 +49,7 @@
 .teaser .teaser-content .teaser-ctas {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: var(--spacing-xs);
   margin-top: var(--spacing-s);
 }
@@ -95,9 +90,24 @@
 }
 
 @media (width >= 900px) {
-  .teaser > div {
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-xl);
+  .teaser .teaser-image {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: auto;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .teaser .teaser-image picture,
+  .teaser .teaser-image img {
+    height: 100%;
+    width: auto;
+    max-height: none;
+    display: block;
+    object-fit: cover;
   }
 
   .teaser .teaser-content h2,
@@ -106,31 +116,87 @@
   }
 }
 
-/* Reverse variant: image on right, text on left */
+/* Reverse variant: side-by-side layout, image on right, text on left */
 .teaser.reverse > div {
-  direction: rtl;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+  align-items: center;
+  padding: 0;
 }
 
-.teaser.reverse > div > * {
-  direction: ltr;
+.teaser.reverse .teaser-image {
+  display: block;
+  position: static;
+  height: auto;
+  width: 100%;
+  overflow: hidden;
+}
+
+.teaser.reverse .teaser-image picture,
+.teaser.reverse .teaser-image img {
+  width: 100%;
+  height: auto;
+  max-height: 480px;
+  object-fit: cover;
+  display: block;
+}
+
+.teaser.reverse .teaser-content {
+  text-align: left;
+  max-width: none;
+}
+
+.teaser.reverse .teaser-content .teaser-ctas {
+  justify-content: flex-start;
+}
+
+@media (width >= 900px) {
+  .teaser.reverse > div {
+    direction: rtl;
+  }
+
+  .teaser.reverse > div > * {
+    direction: ltr;
+  }
+
+  .teaser.reverse .teaser-image {
+    position: static;
+    height: auto;
+  }
+
+  .teaser.reverse .teaser-image img {
+    max-height: none;
+  }
 }
 
 /* Full-width variant: background image with text overlay */
 .teaser.full-width > div {
+  display: grid;
   grid-template-columns: 1fr;
   position: relative;
+  padding: 0;
 }
 
 .teaser.full-width .teaser-image {
-  position: relative;
+  display: block;
+  position: static;
+  height: auto;
+  overflow: hidden;
 }
 
+.teaser.full-width .teaser-image picture,
 .teaser.full-width .teaser-image img {
+  width: 100%;
+  height: auto;
   aspect-ratio: 16 / 7;
   object-fit: cover;
+  display: block;
 }
 
 .teaser.full-width .teaser-content {
+  text-align: left;
+  max-width: none;
   padding: var(--spacing-m);
 }
 

@@ -345,9 +345,14 @@ main > .section:first-of-type {
 }
 
 /* section metadata */
-main .section.light,
-main .section.highlight {
+main .section.light {
   background-color: var(--light-color);
+  margin: 0;
+  padding: var(--spacing-xl) 0;
+}
+
+main .section.highlight {
+  background-color: #cac2ba;
   margin: 0;
   padding: var(--spacing-xl) 0;
 }
