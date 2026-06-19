@@ -214,8 +214,8 @@ main > .section.hero-carousel-container {
   color: var(--background-color-white);
 }
 
-/* Pause/play button */
-.hero-carousel.hero.carousel .hero-carousel-pause {
+/* Pause/play button — overrides the generic nav button size */
+.hero-carousel.hero.carousel .hero-carousel-nav .hero-carousel-pause {
   position: relative;
   width: 40px;
   height: 40px;
