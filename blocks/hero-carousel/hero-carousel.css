@@ -34,7 +34,7 @@ main > .section.hero-carousel-container {
   min-height: 500px;
   display: flex;
   align-items: flex-end;
-  padding: var(--spacing-xl) var(--spacing-s) calc(var(--spacing-xl) + 64px);
+  padding: var(--spacing-xl) 0 calc(var(--spacing-xl) + 64px);
 }
 
 .hero-carousel.hero.carousel .hero-slide::after {
@@ -62,8 +62,7 @@ main > .section.hero-carousel-container {
   position: relative;
   z-index: 1;
   max-width: var(--content-max-width);
-  margin: 0 auto;
-  width: 100%;
+  margin: 0 var(--spacing-s);
   color: var(--background-color-white);
 }
 
@@ -178,7 +177,11 @@ main > .section.hero-carousel-container {
 @media (width >= 900px) {
   .hero-carousel.hero.carousel .hero-slide {
     min-height: 680px;
-    padding: var(--spacing-xxl) var(--spacing-m) calc(var(--spacing-xl) + 64px);
+    padding: var(--spacing-xxl) 0 calc(var(--spacing-xl) + 64px);
+  }
+
+  .hero-carousel.hero.carousel .hero-slide .hero-content {
+    margin: 0 var(--spacing-m);
   }
 
   .hero-carousel.hero.carousel .hero-carousel-controls {
