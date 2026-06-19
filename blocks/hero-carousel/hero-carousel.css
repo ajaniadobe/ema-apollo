@@ -74,6 +74,7 @@ main > .section.hero-carousel-container {
 }
 
 .hero-carousel.hero.carousel .hero-slide .hero-content .hero-heading-think {
+  display: block;
   font-family: var(--heading-font-family);
   font-weight: 400;
   letter-spacing: 3px;
@@ -81,12 +82,14 @@ main > .section.hero-carousel-container {
 }
 
 .hero-carousel.hero.carousel .hero-slide .hero-content .hero-heading-topic {
+  display: block;
   font-family: var(--body-font-family);
   font-weight: 600;
   line-height: 1;
 }
 
 .hero-carousel.hero.carousel .hero-slide .hero-content .hero-heading-new {
+  display: block;
   font-family: var(--body-font-family);
   font-style: italic;
   font-weight: 600;
@@ -182,6 +185,12 @@ main > .section.hero-carousel-container {
 
   .hero-carousel.hero.carousel .hero-slide .hero-content {
     margin: 0 var(--spacing-m);
+  }
+
+  .hero-carousel.hero.carousel .hero-slide .hero-content .hero-heading-think,
+  .hero-carousel.hero.carousel .hero-slide .hero-content .hero-heading-topic,
+  .hero-carousel.hero.carousel .hero-slide .hero-content .hero-heading-new {
+    display: inline;
   }
 
   .hero-carousel.hero.carousel .hero-carousel-controls {
