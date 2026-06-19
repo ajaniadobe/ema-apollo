@@ -6,7 +6,7 @@
 
 .scrolling-narrative .scrolling-narrative-left h2,
 .scrolling-narrative .scrolling-narrative-left h3 {
-  font-size: var(--heading-font-size-l);
+  font-size: 32px;
   line-height: 1.2;
   margin: 0 0 var(--spacing-s);
 }
@@ -33,7 +33,8 @@
 }
 
 .scrolling-narrative .scrolling-narrative-right p {
-  font-size: 18px;
+  font-family: var(--heading-font-family);
+  font-size: 28px;
   line-height: 1.7;
   margin: 0 0 var(--spacing-s);
   opacity: 0.85;
@@ -41,6 +42,17 @@
 
 .scrolling-narrative .scrolling-narrative-right p:last-child {
   margin-bottom: 0;
+}
+
+@media (width >= 768px) {
+  .scrolling-narrative .scrolling-narrative-left h2,
+  .scrolling-narrative .scrolling-narrative-left h3 {
+    font-size: 36px;
+  }
+
+  .scrolling-narrative .scrolling-narrative-right p {
+    font-size: 32px;
+  }
 }
 
 @media (width >= 900px) {
@@ -58,7 +70,7 @@
 
 @media (width >= 992px) {
   .scrolling-narrative > div {
-    height: 560px;
+    height: 480px;
     overflow: hidden;
   }
 
