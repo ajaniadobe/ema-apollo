@@ -91,10 +91,24 @@
           "value": ""
         },
         {
+          "component": "text",
+          "valueType": "string",
+          "name": "heading",
+          "label": "Heading",
+          "value": ""
+        },
+        {
           "component": "richtext",
-          "name": "text",
+          "name": "description",
           "value": "",
-          "label": "Content",
+          "label": "Description",
+          "valueType": "string"
+        },
+        {
+          "component": "richtext",
+          "name": "link",
+          "value": "",
+          "label": "Link",
           "valueType": "string"
         }
       ]
