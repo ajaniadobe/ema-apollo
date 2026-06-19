@@ -29,7 +29,6 @@ main > .section.hero-carousel-container {
 
 .hero-carousel.hero.carousel .hero-slide {
   flex: 0 0 100%;
-  max-width: fit-content;
   position: relative;
   min-height: 500px;
   display: flex;
@@ -166,6 +165,7 @@ main > .section.hero-carousel-container {
 @media (width >= 900px) {
   .hero-carousel.hero.carousel .hero-slide {
     min-height: 680px;
+    max-width: fit-content;
     padding: var(--spacing-xxl) var(--spacing-m) calc(var(--spacing-xl) + 64px);
   }
 
