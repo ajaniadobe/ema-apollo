@@ -25,6 +25,10 @@ export default function decorate(block) {
     }
     if (link) {
       link.className = 'news-list-link';
+      const anchor = link.querySelector('a');
+      if (anchor && anchor.textContent.trim().startsWith('/')) {
+        anchor.textContent = 'Learn More';
+      }
       li.append(link);
     }
 
