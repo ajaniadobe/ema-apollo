@@ -857,6 +857,51 @@
           }
         },
         {
+          "title": "Teaser (Reverse)",
+          "id": "teaser-reverse",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block",
+                "template": {
+                  "name": "Teaser (Reverse)",
+                  "model": "teaser"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Teaser (Text Links)",
+          "id": "teaser-text-links",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block",
+                "template": {
+                  "name": "Teaser (Text Links)",
+                  "model": "teaser"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Teaser (Reverse, Text Links)",
+          "id": "teaser-reverse-text-links",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block",
+                "template": {
+                  "name": "Teaser (Reverse, Text Links)",
+                  "model": "teaser"
+                }
+              }
+            }
+          }
+        },
+        {
           "title": "Video",
           "id": "video",
           "plugins": {
