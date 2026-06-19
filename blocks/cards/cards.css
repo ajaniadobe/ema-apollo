@@ -3,8 +3,7 @@
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 32px;
+  gap: 1pc;
 }
 
 .cards > ul > li {
@@ -270,14 +269,11 @@
   display: none;
 }
 
-/* Featured variant: large card on left, remaining cards stacked on right */
-.cards-featured > ul {
-  grid-template-columns: 1fr;
-}
-
+/* Featured variant: large first card with remaining cards in second column */
 .cards-featured > ul > li:first-child {
   display: flex;
   flex-direction: column;
+  aspect-ratio: 16 / 9;
 }
 
 .cards-featured > ul > li:first-child .cards-card-image img {
@@ -297,7 +293,7 @@
   grid-column: 1 / -1;
 }
 
-@media (width >= 600px) {
+@media (width >= 768px) {
   .cards > ul {
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   }
@@ -317,22 +313,46 @@
   .cards > ul > li.full-width-image-right .cards-card-body {
     order: 1;
   }
-}
 
-@media (width >= 900px) {
+  /* Featured: 2-column grid, first card spans both columns */
   .cards-featured > ul {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-m);
+    gap: 1pc;
     align-items: start;
   }
 
   .cards-featured > ul > li:first-child {
+    grid-column: 1 / -1;
+  }
+
+  /* Regular image cards: full-width, image left, no internal gap */
+  .cards > ul > li:has(.cards-card-image):not(.full-width-image-left, .full-width-image-right, .image-bg) {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    align-items: start;
+  }
+}
+
+@media (width >= 992px) {
+  /* Featured: first card takes 1 column, spans 2 rows */
+  .cards-featured > ul > li:first-child {
     grid-column: 1;
     grid-row: 1 / 3;
+    aspect-ratio: auto;
+    align-self: stretch;
   }
 
   .cards-featured > ul > li:first-child .cards-card-image img {
     aspect-ratio: 3 / 2;
+  }
+
+  /* Reset regular image cards to normal grid cells */
+  .cards > ul > li:has(.cards-card-image):not(.full-width-image-left, .full-width-image-right, .image-bg) {
+    grid-column: auto;
+    display: flex;
+    flex-direction: column;
   }
 }
