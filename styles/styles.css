@@ -12,9 +12,10 @@
 
 :root {
   /* colors */
-  --background-color: #fef8f3;
+  --background-color: #fefcfa;
   --background-color-white: #fff;
   --light-color: #f5f0eb;
+  --highlight-color: #f0e6d3;
   --dark-color: #55585a;
   --text-color: #010101;
   --text-color-muted: #55585a;
@@ -73,7 +74,7 @@
 @media (width >= 900px) {
   :root {
     /* heading sizes scale up on desktop */
-    --heading-font-size-xxl: 60px;
+    --heading-font-size-xxl: 72px;
     --heading-font-size-xl: 44px;
     --heading-font-size-l: 34px;
     --heading-font-size-m: 28px;
@@ -345,6 +346,12 @@ main > .section:first-of-type {
 main .section.light,
 main .section.highlight {
   background-color: var(--light-color);
+  margin: 0;
+  padding: var(--spacing-xl) 0;
+}
+
+main .section.warm {
+  background-color: var(--highlight-color);
   margin: 0;
   padding: var(--spacing-xl) 0;
 }

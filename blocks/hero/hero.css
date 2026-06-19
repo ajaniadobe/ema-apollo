@@ -24,7 +24,18 @@
   object-fit: cover;
 }
 
+/* Gradient overlay for readability */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(transparent 40%, rgb(0 0 0 / 55%));
+  z-index: 0;
+}
+
 .hero .hero-content {
+  position: relative;
+  z-index: 1;
   max-width: var(--content-max-width);
   margin: 0 auto;
   width: 100%;
@@ -52,9 +63,9 @@
 
   .hero .hero-content h1,
   .hero .hero-content h2 {
-    font-size: 60px;
-    line-height: 64px;
-    letter-spacing: -0.9px;
+    font-size: 64px;
+    line-height: 68px;
+    letter-spacing: -1px;
   }
 }
 
@@ -63,6 +74,10 @@
   padding: 0;
   min-height: unset;
   display: block;
+}
+
+.hero.carousel::after {
+  display: none;
 }
 
 .hero.carousel .hero-carousel {
@@ -81,11 +96,16 @@
   min-height: 500px;
   display: flex;
   align-items: flex-end;
-  padding: var(--spacing-xl) var(--spacing-s);
+  padding: var(--spacing-xl) var(--spacing-s) calc(var(--spacing-xl) + 64px);
 }
 
-.hero.carousel .hero-slide[aria-hidden='true'] {
-  visibility: hidden;
+/* Gradient overlay per slide */
+.hero.carousel .hero-slide::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(transparent 30%, rgb(0 0 0 / 60%));
+  z-index: 0;
 }
 
 .hero.carousel .hero-slide .hero-image {
@@ -102,6 +122,8 @@
 }
 
 .hero.carousel .hero-slide .hero-content {
+  position: relative;
+  z-index: 1;
   max-width: var(--content-max-width);
   margin: 0 auto;
   width: 100%;
@@ -119,61 +141,93 @@
   color: var(--background-color-white);
 }
 
+/* Bottom control bar */
 .hero.carousel .hero-carousel-controls {
   position: absolute;
-  bottom: var(--spacing-m);
-  right: var(--spacing-m);
+  bottom: 0;
+  left: 0;
+  right: 0;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-xs) var(--spacing-s);
+  background: rgb(0 0 0 / 35%);
   gap: var(--spacing-xs);
 }
 
-.hero.carousel .hero-carousel-dots {
+/* Labeled tabs */
+.hero.carousel .hero-carousel-tabs {
   display: flex;
-  gap: 8px;
+  gap: 4px;
+  flex: 1;
+  overflow-x: auto;
+  scrollbar-width: none;
 }
 
-.hero.carousel .hero-carousel-dots button {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  border: 1px solid var(--background-color-white);
+.hero.carousel .hero-carousel-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.hero.carousel .hero-carousel-tabs button {
   background: transparent;
-  padding: 0;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: rgb(255 255 255 / 65%);
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-xs);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: var(--spacing-xxs) var(--spacing-xs);
   cursor: pointer;
-  transition: background-color 0.2s;
+  white-space: nowrap;
+  transition: color 0.2s, border-color 0.2s;
 }
 
-.hero.carousel .hero-carousel-dots button[aria-selected='true'] {
-  background: var(--background-color-white);
+.hero.carousel .hero-carousel-tabs button[aria-selected='true'] {
+  color: var(--background-color-white);
+  border-bottom-color: var(--background-color-white);
 }
 
+/* Prev/next nav */
 .hero.carousel .hero-carousel-nav {
   display: flex;
   gap: 8px;
+  flex-shrink: 0;
 }
 
 .hero.carousel .hero-carousel-nav button {
   width: 32px;
   height: 32px;
-  border: 1px solid var(--background-color-white);
+  border: 1px solid rgb(255 255 255 / 40%);
   border-radius: 50%;
   background: transparent;
   color: var(--background-color-white);
+  font-size: 16px;
   padding: 0;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background 0.2s, border-color 0.2s;
 }
 
 .hero.carousel .hero-carousel-nav button:hover {
   background: rgb(255 255 255 / 15%);
+  border-color: var(--background-color-white);
+}
+
+.hero.carousel .hero-carousel-tabs button:hover {
+  color: var(--background-color-white);
 }
 
 @media (width >= 900px) {
   .hero.carousel .hero-slide {
     min-height: 680px;
-    padding: var(--spacing-xxl) var(--spacing-m);
+    padding: var(--spacing-xxl) var(--spacing-m) calc(var(--spacing-xl) + 64px);
+  }
+
+  .hero.carousel .hero-carousel-controls {
+    padding: var(--spacing-xs) var(--spacing-m);
   }
 }

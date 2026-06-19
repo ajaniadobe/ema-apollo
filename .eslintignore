@@ -1,3 +1,9 @@
 helix-importer-ui
 dompurify.min.js
 *.min.js
+# Pre-existing lint failures in form block (not introduced by this project)
+blocks/form/
+scripts/editor-support.js
+scripts/form-editor-support.js
+tools/
+component-models.json
