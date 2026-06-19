@@ -1,14 +1,5 @@
 @import url('../teaser/teaser.css');
 
-/* Reverse: image right, text left */
-.teaser-reverse > div {
-  direction: rtl;
-}
-
-.teaser-reverse > div > * {
-  direction: ltr;
-}
-
 /* Text-links CTA style — overrides inherited button styles from teaser.css */
 .teaser-reverse.text-links .teaser-content .teaser-ctas {
   gap: var(--spacing-s);
