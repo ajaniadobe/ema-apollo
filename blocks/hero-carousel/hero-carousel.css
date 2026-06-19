@@ -82,14 +82,14 @@ main > .section.hero-carousel-container {
 
 .hero-carousel.hero.carousel .hero-slide .hero-content .hero-heading-topic {
   font-family: var(--body-font-family);
-  font-weight: 400;
+  font-weight: 600;
   line-height: 1;
 }
 
 .hero-carousel.hero.carousel .hero-slide .hero-content .hero-heading-new {
   font-family: var(--body-font-family);
   font-style: italic;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 1.1;
 }
 
