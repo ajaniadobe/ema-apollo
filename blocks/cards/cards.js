@@ -30,8 +30,17 @@ export default function decorate(block) {
   const rows = [...block.children];
   const fragment = document.createDocumentFragment();
 
-  /* row with data-aue-model="cards-header" is the section header */
-  const headerIdx = rows.findIndex((r) => r.getAttribute('data-aue-model') === 'cards-header');
+  /* header row is the last row whose first cell has an h2/h3 and no picture */
+  const isHeaderRow = (r) => {
+    const model = r.getAttribute('data-aue-model');
+    if (model) return model === 'cards' || model === 'cards-header';
+    const c1 = r.children[0];
+    return c1 && c1.querySelector('h2,h3') && !c1.querySelector('picture');
+  };
+  let headerIdx = -1;
+  for (let i = rows.length - 1; i >= 0; i -= 1) {
+    if (isHeaderRow(rows[i])) { headerIdx = i; break; }
+  }
   let cardRows = rows;
   if (headerIdx !== -1) {
     fragment.append(buildSectionHeader(rows[headerIdx]));

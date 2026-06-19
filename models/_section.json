@@ -59,7 +59,9 @@
         "stats",
         "tabs",
         "teaser",
-        "video"
+        "video",
+        "separator",
+        "news-list"
       ]
     }
   ]

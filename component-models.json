@@ -158,7 +158,7 @@
     ]
   },
   {
-    "id": "cards-header",
+    "id": "cards",
     "fields": [
       {
         "component": "richtext",

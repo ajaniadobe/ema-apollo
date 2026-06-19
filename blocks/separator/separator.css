@@ -1,0 +1,9 @@
+.separator {
+  margin: var(--spacing-xl) 0;
+}
+
+.separator hr {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: 0;
+}

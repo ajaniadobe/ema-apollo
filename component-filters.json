@@ -24,13 +24,14 @@
       "stats",
       "tabs",
       "teaser",
-      "video"
+      "video",
+      "separator",
+      "news-list"
     ]
   },
   {
     "id": "cards",
     "components": [
-      "cards-header",
       "card"
     ]
   },
