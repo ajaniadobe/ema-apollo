@@ -798,6 +798,20 @@
           }
         },
         {
+          "title": "Separator",
+          "id": "separator",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Separator"
+                }
+              }
+            }
+          }
+        },
+        {
           "title": "Stats",
           "id": "stats",
           "plugins": {
