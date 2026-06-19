@@ -222,6 +222,62 @@
   color: var(--background-color-white);
 }
 
+/* Pause/play button */
+.hero.carousel .hero-carousel-pause {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.hero.carousel .hero-carousel-progress-ring {
+  position: absolute;
+  inset: 0;
+  width: 40px;
+  height: 40px;
+  transform: rotate(-90deg);
+}
+
+.hero.carousel .hero-carousel-progress-track {
+  fill: none;
+  stroke: rgb(255 255 255 / 25%);
+  stroke-width: 2;
+}
+
+.hero.carousel .hero-carousel-progress-value {
+  fill: none;
+  stroke: var(--background-color-white);
+  stroke-width: 2;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.1s linear;
+}
+
+.hero.carousel .hero-carousel-pause-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero.carousel .hero-carousel-pause .icon-play {
+  display: none;
+}
+
+.hero.carousel .hero-carousel-pause.is-paused .icon-pause {
+  display: none;
+}
+
+.hero.carousel .hero-carousel-pause.is-paused .icon-play {
+  display: flex;
+}
+
 @media (width >= 900px) {
   .hero.carousel .hero-slide {
     min-height: 680px;

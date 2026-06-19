@@ -34,6 +34,31 @@ function buildCarousel(block) {
 
   let currentSlide = 0;
   let autoplayInterval;
+  let progressRaf = null;
+  let progressStart = null;
+  let progressValueEl = null; // set after pause button is built
+
+  const SLIDE_INTERVAL = 6000;
+  const CIRCUMFERENCE = 2 * Math.PI * 18;
+
+  function startProgress() {
+    if (!progressValueEl) return;
+    cancelAnimationFrame(progressRaf);
+    progressStart = null;
+    progressRaf = requestAnimationFrame(function tick(timestamp) {
+      if (!progressStart) progressStart = timestamp;
+      const elapsed = timestamp - progressStart;
+      const progress = Math.min(elapsed / SLIDE_INTERVAL, 1);
+      progressValueEl.style.strokeDashoffset = CIRCUMFERENCE * (1 - progress);
+      if (progress < 1) progressRaf = requestAnimationFrame(tick);
+    });
+  }
+
+  function stopProgress() {
+    if (!progressValueEl) return;
+    cancelAnimationFrame(progressRaf);
+    progressValueEl.style.strokeDashoffset = CIRCUMFERENCE;
+  }
 
   function goToSlide(index) {
     slides[currentSlide].setAttribute('aria-hidden', 'true');
@@ -42,16 +67,19 @@ function buildCarousel(block) {
     slides[currentSlide].setAttribute('aria-hidden', 'false');
     tabs.children[currentSlide].setAttribute('aria-selected', 'true');
     track.style.transform = `translateX(-${currentSlide * 100}%)`;
+    startProgress();
   }
 
   function startAutoplay() {
     autoplayInterval = setInterval(() => {
       goToSlide((currentSlide + 1) % slides.length);
-    }, 6000);
+    }, SLIDE_INTERVAL);
+    startProgress();
   }
 
   function stopAutoplay() {
     clearInterval(autoplayInterval);
+    stopProgress();
   }
 
   // Extract label from first heading in each slide's content area
@@ -104,12 +132,54 @@ function buildCarousel(block) {
     startAutoplay();
   });
 
-  nav.append(prev, next);
+  // Pause/play toggle with circular progress ring
+  const pauseBtn = document.createElement('button');
+  pauseBtn.className = 'hero-carousel-pause';
+  pauseBtn.setAttribute('aria-label', 'Pause autoplay');
+  pauseBtn.setAttribute('aria-pressed', 'true');
+  pauseBtn.innerHTML = `
+    <svg class="hero-carousel-progress-ring" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+      <circle class="hero-carousel-progress-track" cx="20" cy="20" r="18"/>
+      <circle class="hero-carousel-progress-value" cx="20" cy="20" r="18"
+        stroke-dasharray="${CIRCUMFERENCE}"
+        stroke-dashoffset="${CIRCUMFERENCE}"/>
+    </svg>
+    <span class="hero-carousel-pause-icon" aria-hidden="true">
+      <svg class="icon-pause" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10">
+        <rect x="1" y="0" width="3" height="10" fill="white"/>
+        <rect x="6" y="0" width="3" height="10" fill="white"/>
+      </svg>
+      <svg class="icon-play" xmlns="http://www.w3.org/2000/svg" width="10" height="12" viewBox="0 0 10 12">
+        <path d="M0 12V0L10 6L0 12Z" fill="white"/>
+      </svg>
+    </span>`;
+
+  progressValueEl = pauseBtn.querySelector('.hero-carousel-progress-value');
+
+  let isPlaying = true;
+
+  pauseBtn.addEventListener('click', () => {
+    if (isPlaying) {
+      stopAutoplay();
+      isPlaying = false;
+      pauseBtn.setAttribute('aria-label', 'Resume autoplay');
+      pauseBtn.setAttribute('aria-pressed', 'false');
+      pauseBtn.classList.add('is-paused');
+    } else {
+      startAutoplay();
+      isPlaying = true;
+      pauseBtn.setAttribute('aria-label', 'Pause autoplay');
+      pauseBtn.setAttribute('aria-pressed', 'true');
+      pauseBtn.classList.remove('is-paused');
+    }
+  });
+
+  nav.append(prev, pauseBtn, next);
   controls.append(nav);
   carousel.append(controls);
 
-  carousel.addEventListener('mouseenter', stopAutoplay);
-  carousel.addEventListener('mouseleave', startAutoplay);
+  carousel.addEventListener('mouseenter', () => { if (isPlaying) stopAutoplay(); });
+  carousel.addEventListener('mouseleave', () => { if (isPlaying) startAutoplay(); });
   startAutoplay();
 
   block.textContent = '';

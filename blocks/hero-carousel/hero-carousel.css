@@ -214,6 +214,61 @@ main > .section.hero-carousel-container {
   color: var(--background-color-white);
 }
 
+/* Pause/play button — overrides the generic nav button size */
+.hero-carousel.hero.carousel .hero-carousel-nav .hero-carousel-pause {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.hero-carousel.hero.carousel .hero-carousel-progress-ring {
+  position: absolute;
+  inset: 0;
+  width: 40px;
+  height: 40px;
+  transform: rotate(-90deg);
+}
+
+.hero-carousel.hero.carousel .hero-carousel-progress-track {
+  fill: none;
+  stroke: rgb(255 255 255 / 25%);
+  stroke-width: 2;
+}
+
+.hero-carousel.hero.carousel .hero-carousel-progress-value {
+  fill: none;
+  stroke: var(--background-color-white);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.hero-carousel.hero.carousel .hero-carousel-pause-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-carousel.hero.carousel .hero-carousel-pause .icon-play {
+  display: none;
+}
+
+.hero-carousel.hero.carousel .hero-carousel-pause.is-paused .icon-pause {
+  display: none;
+}
+
+.hero-carousel.hero.carousel .hero-carousel-pause.is-paused .icon-play {
+  display: flex;
+}
+
 @media (width >= 768px) {
   .hero-carousel.hero.carousel .hero-carousel {
     height: 700px;
