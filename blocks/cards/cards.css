@@ -175,13 +175,6 @@
   margin-top: auto;
 }
 
-.cards > ul > li.blue .cards-card-body > p:first-child strong,
-.cards > ul > li.blue .cards-card-body > p:first-child:not(:has(a)),
-.cards > ul > li.green .cards-card-body > p:first-child strong,
-.cards > ul > li.green .cards-card-body > p:first-child:not(:has(a)) {
-  color: var(--blue-color);
-}
-
 .cards > ul > li.blue .cards-card-body p:last-child a,
 .cards > ul > li.green .cards-card-body p:last-child a {
   color: #fff;
@@ -232,7 +225,6 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  color: var(--blue-color);
 }
 
 .cards > ul > li.image-bg .cards-card-body p:last-child a {
