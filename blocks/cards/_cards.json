@@ -44,9 +44,43 @@
           }
         }
       }
+    },
+    {
+      "title": "Cards Header",
+      "id": "cards-header",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Cards Header",
+              "model": "cards-header"
+            }
+          }
+        }
+      }
     }
   ],
   "models": [
+    {
+      "id": "cards-header",
+      "fields": [
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "sectionTitle",
+          "label": "Section Title",
+          "value": ""
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "sectionLink",
+          "label": "Section Link (optional)",
+          "value": ""
+        }
+      ]
+    },
     {
       "id": "card",
       "fields": [
@@ -71,6 +105,7 @@
     {
       "id": "cards",
       "components": [
+        "cards-header",
         "card"
       ]
     }

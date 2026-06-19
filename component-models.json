@@ -158,6 +158,25 @@
     ]
   },
   {
+    "id": "cards-header",
+    "fields": [
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "sectionTitle",
+        "label": "Section Title",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "sectionLink",
+        "label": "Section Link (optional)",
+        "value": ""
+      }
+    ]
+  },
+  {
     "id": "card",
     "fields": [
       {

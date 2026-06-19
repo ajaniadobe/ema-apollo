@@ -1,5 +1,3 @@
-import { moveInstrumentation } from '../../scripts/scripts.js';
-
 function buildCarousel(block) {
   const slides = [...block.children];
   if (slides.length <= 1) return;
@@ -134,7 +132,6 @@ export default function decorate(block) {
         cell.classList.add('hero-content');
       }
     }
-    moveInstrumentation(row, row);
 
     // Transform "Think Topic New" heading into stacked typographic treatment
     const contentCell = row.querySelector('.hero-content');

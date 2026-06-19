@@ -30,6 +30,7 @@
   {
     "id": "cards",
     "components": [
+      "cards-header",
       "card"
     ]
   },
