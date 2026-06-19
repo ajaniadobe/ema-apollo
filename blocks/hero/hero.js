@@ -57,9 +57,15 @@ function buildCarousel(block) {
   // Extract label from first heading in each slide's content area
   slides.forEach((slide, i) => {
     const heading = slide.querySelector('h1, h2, h3');
-    const label = heading
-      ? heading.textContent.replace(/think\s*/i, '').trim().split(/\s+/)[0]
-      : `${i + 1}`;
+    const topicSpan = heading && heading.querySelector('.hero-heading-topic');
+    let label;
+    if (topicSpan) {
+      [label] = topicSpan.textContent.trim().split(/\s+/);
+    } else if (heading) {
+      [label] = heading.textContent.replace(/think\s*/i, '').trim().split(/\s+/);
+    } else {
+      label = `${i + 1}`;
+    }
 
     const tab = document.createElement('button');
     tab.setAttribute('role', 'tab');
@@ -124,6 +130,20 @@ export default function decorate(block) {
         cell.classList.add('hero-image');
       } else {
         cell.classList.add('hero-content');
+      }
+    }
+
+    // Transform "Think Topic New" heading into stacked typographic treatment
+    const contentCell = row.querySelector('.hero-content');
+    if (contentCell) {
+      const heading = contentCell.querySelector('h1, h2, h3');
+      if (heading) {
+        const words = heading.textContent.trim().split(/\s+/);
+        if (words.length >= 3 && words[0].toLowerCase() === 'think') {
+          const topic = words.slice(1, -1).join(' ');
+          const last = words[words.length - 1];
+          heading.innerHTML = `<span class="hero-heading-think">Think</span><span class="hero-heading-topic">${topic}</span><span class="hero-heading-new">${last}</span>`;
+        }
       }
     }
   });

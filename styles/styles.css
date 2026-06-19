@@ -396,3 +396,25 @@ main .section.green a {
 main .section.full-width > div {
   max-width: var(--content-wide-max-width);
 }
+
+main .section.centered > div {
+  text-align: center;
+}
+
+main .section.centered > div h1,
+main .section.centered > div h2,
+main .section.centered > div h3,
+main .section.centered > div h4,
+main .section.centered > div h5,
+main .section.centered > div h6 {
+  text-align: center;
+}
+
+main .section.highlight.cards-container .default-content-wrapper {
+  text-align: center;
+}
+
+main .section.highlight.cards-container .default-content-wrapper h2,
+main .section.highlight.cards-container .default-content-wrapper h3 {
+  text-align: center;
+}
