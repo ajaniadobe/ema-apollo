@@ -64,6 +64,7 @@
   align-items: center;
   gap: 6px;
   padding: 12px 24px;
+  border-radius: 100px;
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-s);
   font-weight: 500;
