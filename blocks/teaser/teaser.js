@@ -18,9 +18,21 @@ export default function decorate(block) {
       cell.classList.add('teaser-image');
     } else {
       cell.classList.add('teaser-content');
-      const eyebrow = cell.querySelector('p:first-child');
-      if (eyebrow && !eyebrow.querySelector('a') && eyebrow.textContent.length < 50) {
-        eyebrow.classList.add('teaser-eyebrow');
+      const paras = [...cell.querySelectorAll('p')];
+      const eyebrow = paras.find((p) => !p.querySelector('a') && p.textContent.length < 50);
+      if (eyebrow) eyebrow.classList.add('teaser-eyebrow');
+
+      // Wrap all CTA link paragraphs into a single .teaser-ctas div
+      const ctaParas = paras.filter((p) => p.querySelector('a') && p.closest('.teaser-content'));
+      if (ctaParas.length > 0) {
+        const ctaWrapper = document.createElement('div');
+        ctaWrapper.className = 'teaser-ctas';
+        ctaParas.forEach((p) => {
+          const a = p.querySelector('a');
+          if (a) ctaWrapper.append(a);
+          p.remove();
+        });
+        cell.append(ctaWrapper);
       }
     }
   });
