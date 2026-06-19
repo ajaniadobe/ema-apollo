@@ -873,7 +873,7 @@
         },
         {
           "title": "Teaser (Background)",
-          "id": "teaser-bg",
+          "id": "teaser-background",
           "plugins": {
             "xwalk": {
               "page": {
