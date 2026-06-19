@@ -179,7 +179,7 @@
 }
 
 .cards > ul > li.green .cards-card-body {
-  background-color: var(--card-green-color);
+  background-color: var(--green-color);
   padding: var(--spacing-xs);
 }
 
