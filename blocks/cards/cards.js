@@ -47,7 +47,7 @@ export default function decorate(block) {
     cardRows = rows.filter((_, i) => i !== headerIdx);
   }
 
-  const CARD_STYLES = new Set(['blue', 'green']);
+  const CARD_STYLES = new Set(['blue', 'green', 'image-bg']);
   const ul = document.createElement('ul');
   cardRows.forEach((row) => {
     const li = document.createElement('li');

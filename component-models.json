@@ -211,6 +211,10 @@
           {
             "name": "Green",
             "value": "green"
+          },
+          {
+            "name": "Image Background",
+            "value": "image-bg"
           }
         ]
       }

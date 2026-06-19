@@ -93,7 +93,8 @@
           "options": [
             { "name": "None", "value": "" },
             { "name": "Blue", "value": "blue" },
-            { "name": "Green", "value": "green" }
+            { "name": "Green", "value": "green" },
+            { "name": "Image Background", "value": "image-bg" }
           ]
         }
       ]
