@@ -872,6 +872,21 @@
           }
         },
         {
+          "title": "Teaser (Background)",
+          "id": "teaser-background",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block",
+                "template": {
+                  "name": "Teaser (Background)",
+                  "model": "teaser"
+                }
+              }
+            }
+          }
+        },
+        {
           "title": "Teaser (Text Links)",
           "id": "teaser-text-links",
           "plugins": {

@@ -13,15 +13,8 @@
 .teaser .teaser-image img {
   width: 100%;
   height: auto;
-  max-height: 480px;
   object-fit: cover;
   display: block;
-}
-
-@media (width >= 900px) {
-  .teaser .teaser-image img {
-    max-height: none;
-  }
 }
 
 .teaser .teaser-content .teaser-eyebrow {
@@ -76,8 +69,9 @@
 }
 
 .teaser .teaser-content .teaser-ctas a:not(:first-child) {
-  background-color: transparent;
+  background-color: var(--background-color-white);
   color: var(--text-color);
+  border-color: var(--text-color);
 }
 
 .teaser .teaser-content .teaser-ctas a:first-child {
@@ -86,12 +80,14 @@
 }
 
 .teaser .teaser-content .teaser-ctas a:not(:first-child):hover {
-  background-color: var(--light-color);
+  background-color: var(--text-color);
+  color: var(--background-color-white);
 }
 
 .teaser .teaser-content .teaser-ctas a:first-child:hover {
-  background-color: var(--dark-color);
-  border-color: var(--dark-color);
+  background-color: transparent;
+  color: var(--text-color);
+  border-color: var(--text-color);
 }
 
 @media (width >= 900px) {
@@ -106,55 +102,64 @@
   }
 }
 
-/* Reverse variant: image on right, text on left */
-.teaser.reverse > div {
-  direction: rtl;
-}
-
-.teaser.reverse > div > * {
-  direction: ltr;
-}
-
-/* Full-width variant: background image with text overlay */
-.teaser.full-width > div {
-  grid-template-columns: 1fr;
-  position: relative;
-}
-
-.teaser.full-width .teaser-image {
-  position: relative;
-}
-
-.teaser.full-width .teaser-image img {
-  aspect-ratio: 16 / 7;
-  object-fit: cover;
-}
-
-.teaser.full-width .teaser-content {
-  padding: var(--spacing-m);
-}
-
+/* Reverse variant: image left, text right */
 @media (width >= 900px) {
-  .teaser.full-width .teaser-content {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: var(--spacing-xl);
-    color: var(--background-color-white);
-    background: linear-gradient(transparent, rgb(0 0 0 / 70%));
+  .teaser.reverse > div {
+    direction: rtl;
   }
 
-  .teaser.full-width .teaser-content h2,
-  .teaser.full-width .teaser-content h3 {
-    color: var(--background-color-white);
+  .teaser.reverse > div > * {
+    direction: ltr;
   }
+}
 
-  .teaser.full-width .teaser-content p {
-    color: rgb(255 255 255 / 80%);
-  }
+/* Text-links CTA variant */
+.teaser.text-links .teaser-content .teaser-ctas {
+  gap: var(--spacing-s);
+  flex-direction: column;
+  align-items: flex-start;
+}
 
-  .teaser.full-width .teaser-content p a {
-    color: var(--background-color-white);
-  }
+.teaser.text-links .teaser-content .teaser-ctas a[href] {
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--text-color);
+  text-transform: none;
+  font-size: var(--body-font-size-s);
+  font-weight: 500;
+  letter-spacing: 0;
+  gap: 12px;
+}
+
+.teaser.text-links .teaser-content .teaser-ctas a::before {
+  content: '\2192';
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  border: 1px solid var(--text-color);
+  border-radius: 50%;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.teaser.text-links .teaser-content .teaser-ctas a:first-child,
+.teaser.text-links .teaser-content .teaser-ctas a:not(:first-child) {
+  background: transparent;
+  color: var(--text-color);
+}
+
+.teaser.text-links .teaser-content .teaser-ctas a:hover,
+.teaser.text-links .teaser-content .teaser-ctas a:first-child:hover,
+.teaser.text-links .teaser-content .teaser-ctas a:not(:first-child):hover {
+  background: transparent;
+  color: var(--text-color-muted);
+  border: none;
+}
+
+.teaser.text-links .teaser-content .teaser-ctas a:hover::before {
+  border-color: var(--text-color-muted);
 }

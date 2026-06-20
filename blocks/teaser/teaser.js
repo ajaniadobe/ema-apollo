@@ -7,7 +7,7 @@ export default function decorate(block) {
   let cells;
   if (rows.length >= 2 && rows[0].children.length === 1 && rows[1].children.length === 1) {
     cells = [...rows].map((row) => row.firstElementChild);
-    rows[0].append(cells[1]);
+    rows[0].prepend(cells[1]);
     rows.slice(1).forEach((row) => row.remove());
   } else {
     cells = [...rows[0].children];
