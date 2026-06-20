@@ -58,7 +58,7 @@
 .teaser-background .teaser-content .teaser-ctas a {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   padding: 12px 24px;
   border-radius: 100px;
   font-family: var(--body-font-family);
@@ -67,27 +67,21 @@
   letter-spacing: 0.5px;
   text-transform: uppercase;
   text-decoration: none;
-  border: 1px solid var(--text-color);
-  transition: background-color 0.2s, color 0.2s;
-}
-
-.teaser-background .teaser-content .teaser-ctas a:not(:first-child) {
-  background-color: transparent;
-  color: var(--text-color);
-}
-
-.teaser-background .teaser-content .teaser-ctas a:first-child {
   background-color: var(--text-color);
   color: var(--background-color-white);
+  border: 1px solid var(--text-color);
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
 }
 
-.teaser-background .teaser-content .teaser-ctas a:not(:first-child):hover {
-  background-color: var(--light-color);
+.teaser-background .teaser-content .teaser-ctas a[title="Watch"]::before {
+  content: '▶';
+  font-size: 0.7em;
 }
 
-.teaser-background .teaser-content .teaser-ctas a:first-child:hover {
-  background-color: var(--dark-color);
-  border-color: var(--dark-color);
+.teaser-background .teaser-content .teaser-ctas a:hover {
+  background-color: transparent;
+  color: var(--text-color);
+  border-color: var(--text-color);
 }
 
 @media (width >= 900px) {

@@ -69,8 +69,9 @@
 }
 
 .teaser .teaser-content .teaser-ctas a:not(:first-child) {
-  background-color: transparent;
+  background-color: var(--background-color-white);
   color: var(--text-color);
+  border-color: var(--text-color);
 }
 
 .teaser .teaser-content .teaser-ctas a:first-child {
@@ -79,12 +80,14 @@
 }
 
 .teaser .teaser-content .teaser-ctas a:not(:first-child):hover {
-  background-color: var(--light-color);
+  background-color: var(--text-color);
+  color: var(--background-color-white);
 }
 
 .teaser .teaser-content .teaser-ctas a:first-child:hover {
-  background-color: var(--dark-color);
-  border-color: var(--dark-color);
+  background-color: transparent;
+  color: var(--text-color);
+  border-color: var(--text-color);
 }
 
 @media (width >= 900px) {
