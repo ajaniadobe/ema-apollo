@@ -51,8 +51,11 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  color: var(--text-color-muted);
-  display: block;
+  color: var(--text-color);
+  display: inline-block;
+  background-color: var(--light-color);
+  border-radius: 100px;
+  padding: 3px 10px;
   margin-bottom: var(--spacing-xxs);
 }
 
