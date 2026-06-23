@@ -20,6 +20,7 @@ function buildCarousel(block) {
   slides.forEach((slide, i) => {
     slide.classList.add('hero-slide');
     slide.setAttribute('aria-hidden', i > 0 ? 'true' : 'false');
+    if (i > 0) slide.setAttribute('inert', '');
     track.append(slide);
   });
 
@@ -63,9 +64,11 @@ function buildCarousel(block) {
 
   function goToSlide(index) {
     slides[currentSlide].setAttribute('aria-hidden', 'true');
+    slides[currentSlide].setAttribute('inert', '');
     tabs.children[currentSlide].setAttribute('aria-selected', 'false');
     currentSlide = index;
     slides[currentSlide].setAttribute('aria-hidden', 'false');
+    slides[currentSlide].removeAttribute('inert');
     tabs.children[currentSlide].setAttribute('aria-selected', 'true');
     track.style.transform = `translateX(-${currentSlide * 100}%)`;
     startProgress();
