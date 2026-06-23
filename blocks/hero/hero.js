@@ -20,6 +20,7 @@ function buildCarousel(block) {
   slides.forEach((slide, i) => {
     slide.classList.add('hero-slide');
     slide.setAttribute('aria-hidden', i > 0 ? 'true' : 'false');
+    if (i > 0) slide.setAttribute('inert', '');
     track.append(slide);
   });
 
@@ -37,6 +38,7 @@ function buildCarousel(block) {
   let progressRaf = null;
   let progressStart = null;
   let progressValueEl = null; // set after pause button is built
+  let slideInfoEl = null; // set after info bar is built
 
   const SLIDE_INTERVAL = 6000;
   const CIRCUMFERENCE = 2 * Math.PI * 18;
@@ -62,12 +64,22 @@ function buildCarousel(block) {
 
   function goToSlide(index) {
     slides[currentSlide].setAttribute('aria-hidden', 'true');
+    slides[currentSlide].setAttribute('inert', '');
     tabs.children[currentSlide].setAttribute('aria-selected', 'false');
     currentSlide = index;
     slides[currentSlide].setAttribute('aria-hidden', 'false');
+    slides[currentSlide].removeAttribute('inert');
     tabs.children[currentSlide].setAttribute('aria-selected', 'true');
     track.style.transform = `translateX(-${currentSlide * 100}%)`;
     startProgress();
+    if (slideInfoEl) {
+      const cta = slideInfoEl.querySelector('.hero-carousel-info-cta');
+      const ctaLink = slides[currentSlide].querySelector('.hero-content a');
+      if (cta && ctaLink) {
+        cta.href = ctaLink.href;
+        cta.textContent = ctaLink.textContent;
+      }
+    }
   }
 
   function startAutoplay() {
@@ -108,6 +120,20 @@ function buildCarousel(block) {
     tabs.append(tab);
   });
   controls.append(tabs);
+
+  // Slide info bar: current slide CTA
+  const info = document.createElement('div');
+  info.className = 'hero-carousel-info';
+  const firstCtaLink = slides[0].querySelector('.hero-content a');
+  if (firstCtaLink) {
+    const ctaLink = document.createElement('a');
+    ctaLink.className = 'hero-carousel-info-cta';
+    ctaLink.href = firstCtaLink.href;
+    ctaLink.textContent = firstCtaLink.textContent;
+    info.append(ctaLink);
+  }
+  slideInfoEl = info;
+  controls.append(info);
 
   const nav = document.createElement('div');
   nav.className = 'hero-carousel-nav';

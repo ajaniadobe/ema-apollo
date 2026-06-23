@@ -16,5 +16,12 @@ export default async function decorate(block) {
   const footer = document.createElement('div');
   while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
 
+  // Add accessible label to empty logo links
+  footer.querySelectorAll('a[href]').forEach((a) => {
+    if (!a.textContent.trim() && !a.getAttribute('aria-label') && !a.querySelector('img')) {
+      a.setAttribute('aria-label', 'Apollo home');
+    }
+  });
+
   block.append(footer);
 }
